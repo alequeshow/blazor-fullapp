@@ -1,0 +1,247 @@
+﻿@using Microsoft.AspNetCore.Components.Sections
+@inherits LayoutComponentBase
+
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <svg class="circular" viewBo    x="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+</div>
+
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <!-- Logo icon -->
+                    <b>
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <img src="assets/images/logo-blazor-full-app-small.png" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo icon -->
+                        <img src="assets/images/logo-blazor-full-app-small.png" alt="homepage" class="light-logo" />
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                    @* <span>
+                        <!-- dark Logo text -->
+                        <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo text -->
+                        <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                    </span> *@
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav mr-auto mt-md-0 ">
+                    <!-- ============================================================== -->
+                    <!-- Menu Toggle Panel -->
+                    <!-- ============================================================== -->
+                    <NavMenu />
+                    <!-- ============================================================== -->
+                    <!-- End Menu Toggle Panel-->
+                    <!-- ============================================================== -->
+                </ul>                
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    @* TODO Review Context MenuBar*@
+    @* @await Html.PartialAsync("_MenuBarItems") *@
+
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper" id="page-container">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-6 align-self-center">
+                    @* TODO: Review BreadCrumComponent customizable per pager*@
+                    @* @await Html.PartialAsync("_LayoutBreadCrumbPartial") *@
+                </div>
+                <div class="col-6 align-self-center action-bar">
+                    <svg class="circular btn-loading" viewBox="25 25 50 50" style="display: none">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                    </svg>
+                    <SectionOutlet SectionName="action-bar" />
+                </div>
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            @Body
+            <!-- ============================================================== -->
+            <!-- End Page Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Notes Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .notes-right-sidebar -->
+            <div class="right-sidebar">
+                <div class="rpanel-title" style="height:10%"> Anotações <span><i class="ti-close notes-right-side-toggle"></i></span></div>
+                <div class="row" style="height:70%">
+                    <div class="notes-scrollright">
+                        <div class="r-panel-body">
+                            <ul class="m-t-20 chatonline">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">D</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">D</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">DB</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">B&P</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">DF</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">DF</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">B&P</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">P&R</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">P&A</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <div class="user-img float-left m-r-10"> <span class="round round-30 text-white">DF</span> <span class="profile-status away pull-right"></span></div>
+                                        <span>
+                                            Nulla nisi ligula, dignissim sed ante sed, molestie hendrerit ipsum. Sed accumsan ligula purus, et aliquet dolor pharetra.  <small class="text-info">2h atrás</small>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height:15%">
+                    <div class="col-12">
+                        <textarea placeholder="Type your message here" class="form-control b-0 h-100"></textarea>
+                    </div>
+                </div>
+                <div class="row" style="height:5%">
+                    <div class="col-12">
+                        <button type="button" class="btn waves-effect waves-light btn-block btn-success"><i class="fa fa-paper-plane-o"></i> Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            🚀 Blazor.FullApp - @@alequeshow
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

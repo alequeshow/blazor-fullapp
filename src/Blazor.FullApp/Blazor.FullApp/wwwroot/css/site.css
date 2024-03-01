@@ -1,0 +1,29 @@
+﻿/*Font sizes*/
+.font-size-25px {
+    font-size: 25px
+}
+
+.font-size-60px {
+    font-size: 60px
+}
+
+/*Element sizes*/
+.w-40 {
+    width: 40px !important;
+}
+
+/*Round Label*/
+.round-30 {
+    line-height: 30px !important;
+    font-size: 12px;
+    width: 30px !important;
+    height: 30px !important
+}
+
+/*Spinner*/
+.btn-loading {
+    display: inline-block;
+    z-index: 9999;
+    width: 30px;
+    height: 30px
+}
